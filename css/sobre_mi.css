@@ -1,0 +1,123 @@
+.padre {
+
+    padding: 5px;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 2fr 2fr 2fr;
+    grid-template-areas: "header header header"
+        "nav nav nav"
+        "titulo titulo titulo"
+        "articulo1 articulo1 articulo1"
+        "form form form"
+        "footer footer footer";
+}
+
+.padre .header {
+    grid-area: header;
+}
+
+.padre .nav {
+    grid-area: nav;
+}
+
+.padre .titulo {
+    grid-area: titulo;
+    font-size: 50px;
+    text-decoration: 1px solid black;
+    height: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+
+.padre .articulo1 {
+    padding: 50px;
+    grid-area: articulo1;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: baseline;
+    background-color: rgba(135, 135, 135, 0.434);
+}
+
+.padre .section1,
+.section2,
+.section3,
+.section4 {
+    border: 1px solid rgba(0, 0, 0, 0.391);
+    border-style: groove;
+    transition: 0.5s;
+}
+
+.padre .section1:hover,
+.section2:hover,
+.section3:hover,
+.section4:hover {
+    size: 50px;
+    box-shadow: 5px 5px 8px;
+
+}
+
+.padre .form {
+    grid-area: form;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.padre .form .lado1 {
+    background-color: rgba(0, 0, 0, 0.391);
+    width: 500px;
+    padding: 4px;
+}
+
+.padre .form .comentarios {
+    width: auto;
+    height: auto;
+}
+
+.padre .footer {
+    background-color: black !important;
+    grid-area: footer;
+    margin-left: -50px;
+    margin-right: -50px;
+}
+
+@media screen and (max-width: 425px) {
+    .padre {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "header header "
+            "nav nav"
+            "titulo titulo"
+            "articulo1 articulo1"
+            "form form"
+            "footer footer";
+    }
+
+    .padre .articulo1 {
+        display: flex;
+        flex-direction: column;
+        margin-top: 100px;
+        width: 420px;
+    }
+
+    .padre .articulo1 .section1,
+    .padre .articulo1 .section2,
+    .padre .articulo1 .section3,
+    .padre .articulo1 .section4 {
+        margin-top: 20px;
+        margin-left: 23px;
+    }
+
+    .padre .form .lado1 {
+        margin: 0;
+        width: 400px;
+
+    }
+
+    .padre .footer {
+        width: 469px;
+    }
+}
